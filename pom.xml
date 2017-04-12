@@ -10,11 +10,11 @@
         <version>7</version>
     </parent>
 
-    <groupId>com.github.miemiedev</groupId>
-    <artifactId>mybatis-paginator</artifactId>
+    <groupId>com.ujigu.paginator</groupId>
+    <artifactId>paginator</artifactId>
     <version>1.2.17</version>
     <packaging>jar</packaging>
-    <name>mybatis-paginator</name>
+    <name>paginator</name>
     <description>A Mybatis plugin, implementation of database paging and sorting</description>
     <url>https://github.com/miemiedev/mybatis-paginator</url>
     <licenses>
@@ -65,6 +65,19 @@
                     </execution>
                 </executions>
             </plugin> -->
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+			  </plugin>
         </plugins>
     </build>
 
@@ -124,5 +137,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    
+    <distributionManagement>
+     <snapshotRepository>
+      <id>snaphosts</id>
+      <url>http://nexus.baoxianjie.net/nexus/content/repositories/snapshots/</url>
+     </snapshotRepository>
+     <repository>
+      <id>releases</id>
+      <url>http://nexus.baoxianjie.net/nexus/content/repositories/releases/</url>
+     </repository>
+    </distributionManagement>
 
 </project>
